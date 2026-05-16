@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dr. Akanksha Tiwari - Fit Aesthetic
 
-## Getting Started
+Premium personal brand website for Dr. Akanksha Tiwari, built with modern web technologies.
 
-First, run the development server:
+## Features
+- **Modern Tech Stack**: Next.js (App Router), TypeScript, Tailwind CSS
+- **Premium Animations**: Framer Motion for scroll effects and micro-interactions
+- **Fully Responsive**: Optimized for all screen sizes (mobile, tablet, desktop)
+- **Performance Optimized**: Static export configuration for lightning-fast loading
+- **Dark Mode**: Built-in support for dark and light themes
+- **SEO Ready**: Semantic HTML and metadata configured
 
+## Local Development
+
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Start the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment to Vercel (Free Hosting)
 
-## Learn More
+Since this project is built with Next.js, deploying to Vercel is the easiest and most optimized approach. It's completely free for personal projects.
 
-To learn more about Next.js, take a look at the following resources:
+### Option 1: Deploy via Vercel Dashboard (Recommended)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Create a free account on [GitHub](https://github.com/) if you don't have one.
+2. Push this project to a new private or public GitHub repository.
+3. Go to [Vercel.com](https://vercel.com/) and sign up with your GitHub account.
+4. Click **Add New Project**.
+5. Import the repository you just created.
+6. Click **Deploy**. Vercel will automatically detect that it's a Next.js project and handle the build process.
+7. Once deployed, you will get a free `.vercel.app` domain (e.g., `fit-aesthetic.vercel.app`) that you can share immediately.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Option 2: Deploy via Vercel CLI
 
-## Deploy on Vercel
+If you prefer to deploy directly from your terminal without pushing to GitHub:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Install the Vercel CLI globally:
+```bash
+npm i -g vercel
+```
+2. Run the deployment command in the project directory:
+```bash
+vercel
+```
+3. Follow the interactive prompts to log in and deploy.
+4. For a production deployment, run:
+```bash
+vercel --prod
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Folder Structure
+
+- `/app`: Next.js App Router pages and layouts
+- `/components`: Reusable UI components and page sections
+- `/data`: Centralized content data (easy to update text without touching components)
+- `/lib`: Utilities and animation variants
+- `/public`: Static assets (images, icons)

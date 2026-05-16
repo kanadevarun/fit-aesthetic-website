@@ -1,26 +1,229 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:where(.dark, .dark *));
 
-@theme inline {
+/* ============================================================
+   Fit Aesthetic — Design System & Global Styles
+   ============================================================ */
+
+/* ---------- Custom Theme Tokens ---------- */
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary-beige: #F5E6DA;
+  --color-primary-offwhite: #FAF7F2;
+  --color-accent-maroon: #6E3B3B;
+  --color-accent-brown: #7B5E57;
+  --color-accent-maroon-light: #8B5555;
+  --color-neutral-gray: #9CA3AF;
+  --color-neutral-cream: #FDF8F3;
+  --color-neutral-dark: #2D2422;
+  --font-sans: var(--font-outfit);
+  --font-heading: var(--font-playfair);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ---------- CSS Variables ---------- */
+:root {
+  --background: #FAF7F2;
+  --foreground: #2D2422;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(110, 59, 59, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glow-maroon: rgba(110, 59, 59, 0.15);
+  --shadow-soft: 0 4px 24px rgba(110, 59, 59, 0.06);
+  --shadow-medium: 0 8px 32px rgba(110, 59, 59, 0.1);
+  --shadow-large: 0 16px 48px rgba(110, 59, 59, 0.12);
+  --gradient-hero: linear-gradient(135deg, #FAF7F2 0%, #F5E6DA 50%, #FDF8F3 100%);
+  --gradient-accent: linear-gradient(135deg, #6E3B3B 0%, #7B5E57 100%);
+  --gradient-warm: linear-gradient(135deg, #F5E6DA 0%, #FAF7F2 50%, #FDF8F3 100%);
+}
+
+/* ---------- Dark Mode Variables ---------- */
+.dark {
+  --background: #1A1412;
+  --foreground: #F5E6DA;
+  --card-bg: rgba(42, 32, 28, 0.8);
+  --card-border: rgba(245, 230, 218, 0.1);
+  --glass-bg: rgba(42, 32, 28, 0.6);
+  --glass-border: rgba(245, 230, 218, 0.15);
+  --glow-maroon: rgba(139, 85, 85, 0.25);
+  --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.2);
+  --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-large: 0 16px 48px rgba(0, 0, 0, 0.35);
+  --gradient-hero: linear-gradient(135deg, #1A1412 0%, #2A201C 50%, #1A1412 100%);
+  --gradient-warm: linear-gradient(135deg, #2A201C 0%, #1A1412 50%, #221A16 100%);
+}
+
+/* ---------- Base Styles ---------- */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-outfit), system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- Custom Scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6E3B3B, #7B5E57);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #8B5555, #957068);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #6E3B3B var(--background);
+}
+
+/* ---------- Selection ---------- */
+::selection {
+  background: rgba(110, 59, 59, 0.2);
+  color: #6E3B3B;
+}
+
+.dark ::selection {
+  background: rgba(245, 230, 218, 0.2);
+  color: #F5E6DA;
+}
+
+/* ---------- Glassmorphism Utility ---------- */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+}
+
+/* ---------- Gradient Text ---------- */
+.gradient-text {
+  background: linear-gradient(135deg, #6E3B3B 0%, #7B5E57 50%, #6E3B3B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .gradient-text {
+  background: linear-gradient(135deg, #F5E6DA 0%, #E8D5C8 50%, #F5E6DA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---------- Glow Effects ---------- */
+.glow-maroon {
+  box-shadow: 0 0 30px var(--glow-maroon), 0 0 60px rgba(110, 59, 59, 0.05);
+}
+
+.glow-maroon-hover:hover {
+  box-shadow: 0 0 40px var(--glow-maroon), 0 0 80px rgba(110, 59, 59, 0.1);
+}
+
+/* ---------- Premium card ---------- */
+.card-premium {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.4s cubic-bezier(0.25, 0.4, 0.25, 1);
+}
+
+.card-premium:hover {
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-4px);
+  border-color: rgba(110, 59, 59, 0.15);
+}
+
+/* ---------- Animated gradient background ---------- */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* ---------- Floating animation ---------- */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 4s ease-in-out 1s infinite;
+}
+
+/* ---------- Sparkle / Glow animation ---------- */
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.animate-sparkle {
+  animation: sparkle 3s ease-in-out infinite;
+}
+
+/* ---------- Subtle pulse ---------- */
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 4s ease-in-out infinite;
+}
+
+/* ---------- Scroll Progress Bar ---------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #6E3B3B, #7B5E57, #6E3B3B);
+  z-index: 9999;
+  transform-origin: left;
+}
+
+/* ---------- Section Spacing ---------- */
+.section-padding {
+  padding: 6rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 8rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding: 10rem 2rem;
+  }
 }

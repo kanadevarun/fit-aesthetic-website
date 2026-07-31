@@ -60,7 +60,7 @@ export default function CheckoutModal({ plan, onClose }: CheckoutModalProps) {
   // Build pre-filled WhatsApp message
   const whatsappMessage = plan
     ? encodeURIComponent(
-        `Hi Dr. Akanksha! 👋\n\nI'd like to enroll in the *${plan.title}* (${plan.currency}${plan.price.toLocaleString("en-IN")} ${plan.duration}).\n\nCould you please share the payment details to get started? 🙏`
+        `Hi Dr. Akanksha!\n\nI'd like to enroll in the *${plan.title}* (${plan.currency}${plan.price.toLocaleString("en-IN")} ${plan.duration}).\n\nCould you please share the payment details to get started?`
       )
     : "";
 

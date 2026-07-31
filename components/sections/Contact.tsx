@@ -26,7 +26,7 @@ export default function Contact() {
     e.preventDefault();
     
     // Construct WhatsApp message
-    const text = `Hi Dr. Akanksha! 👋\n\nI'm reaching out from your website.\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n${formData.phone ? `*Phone:* ${formData.phone}\n` : ""}*Goal:* ${formData.goal}\n\n*Message:* ${formData.message}`;
+    const text = `Hi Dr. Akanksha!\n\nI'm reaching out from your website.\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n${formData.phone ? `*Phone:* ${formData.phone}\n` : ""}*Goal:* ${formData.goal}\n\n*Message:* ${formData.message}`;
     
     // Open WhatsApp
     const whatsappUrl = `https://wa.me/918302235979?text=${encodeURIComponent(text)}`;

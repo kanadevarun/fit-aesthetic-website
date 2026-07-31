@@ -20,6 +20,7 @@ interface ButtonProps {
   icon?: ReactNode;
   iconPosition?: "left" | "right";
   type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
@@ -49,6 +50,7 @@ export default function Button({
   icon,
   iconPosition = "left",
   type = "button",
+  disabled = false,
 }: ButtonProps) {
   const baseStyles =
     "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-300 cursor-pointer select-none focus:outline-none focus:ring-2 focus:ring-accent-maroon/30 focus:ring-offset-2";
@@ -82,9 +84,10 @@ export default function Button({
     <motion.button
       type={type}
       onClick={onClick}
-      className={combinedStyles}
-      whileHover={{ scale: 1.03 }}
-      whileTap={{ scale: 0.97 }}
+      disabled={disabled}
+      className={`${combinedStyles} ${disabled ? "opacity-50 cursor-not-allowed pointer-events-none" : ""}`}
+      whileHover={!disabled ? { scale: 1.03 } : {}}
+      whileTap={!disabled ? { scale: 0.97 } : {}}
     >
       {content}
     </motion.button>

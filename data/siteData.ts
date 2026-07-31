@@ -97,7 +97,7 @@ export const pricingPlans = [
   {
     id: "consultation",
     title: "Consultation Call",
-    price: 899,
+    price: 149,
     currency: "₹",
     duration: "20 min",
     description:

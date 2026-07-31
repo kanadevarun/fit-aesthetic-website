@@ -9,7 +9,6 @@ import { motion } from "framer-motion";
 import { Check, Sparkles, Zap, ArrowRight } from "lucide-react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import SectionHeading from "@/components/ui/SectionHeading";
-import CheckoutModal from "@/components/ui/CheckoutModal";
 import { staggerContainer, staggerChild, fadeInUp } from "@/lib/animations";
 import { pricingPlans, siteConfig } from "@/data/siteData";
 import { useRouter } from "next/navigation";
@@ -17,7 +16,6 @@ import { useRouter } from "next/navigation";
 type Plan = (typeof pricingPlans)[number];
 
 export default function Pricing() {
-  const [selectedPlan, setSelectedPlan] = useState<Plan | null>(null);
   const router = useRouter();
 
   return (
@@ -154,11 +152,7 @@ export default function Pricing() {
             <div className="mt-auto pt-6">
               <button
                 onClick={() => {
-                  if (plan.id === "consultation") {
-                    router.push("/consultation");
-                  } else {
-                    setSelectedPlan(plan);
-                  }
+                  router.push(`/consultation?plan=${plan.id}`);
                 }}
                 className={`flex w-full cursor-pointer items-center justify-center gap-2 rounded-full py-3.5 text-sm font-bold shadow-md transition-all duration-300 active:scale-[0.97] ${
                   plan.highlighted
@@ -195,11 +189,6 @@ export default function Pricing() {
         to book or ask questions — usually replies within a few hours.
       </motion.p>
 
-      {/* Checkout Modal */}
-      <CheckoutModal
-        plan={selectedPlan}
-        onClose={() => setSelectedPlan(null)}
-      />
     </SectionWrapper>
   );
 }

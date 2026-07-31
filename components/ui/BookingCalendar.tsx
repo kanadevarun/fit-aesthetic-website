@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight, Calendar as CalendarIcon, Clock } from "luci
 import Button from "./Button";
 import { useRouter } from "next/navigation";
 
-export default function BookingCalendar() {
+export default function BookingCalendar({ planId = "consultation" }: { planId?: string }) {
   const router = useRouter();
   
   // Basic state for the calendar
@@ -46,7 +46,7 @@ export default function BookingCalendar() {
         year: "numeric"
       });
       // Route to checkout with URL params
-      router.push(`/checkout?date=${encodeURIComponent(dateStr)}&time=${encodeURIComponent(selectedSlot)}`);
+      router.push(`/checkout?plan=${planId}&date=${encodeURIComponent(dateStr)}&time=${encodeURIComponent(selectedSlot)}`);
     }
   };
 

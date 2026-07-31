@@ -129,7 +129,7 @@ export default function Hero() {
                 Book Consultation
               </Button>
               <Button
-                href={`https://youtube.com/@fitaesthetic`}
+                href={siteConfig.social.youtube}
                 variant="outline"
                 size="lg"
                 icon={<Play size={16} />}

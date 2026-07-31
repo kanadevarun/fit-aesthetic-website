@@ -8,7 +8,7 @@ export const siteConfig = {
   description:
     "Personalized fitness guidance, realistic diet strategies, and sustainable transformation plans designed for real people.",
   url: "https://fitaesthetic.in",
-  email: "akankshat0311@gmail.com",
+  email: "akanksha.t0311@gmail.com",
   phone: "+91 83022 35979",
   whatsapp: "https://wa.me/918302235979",
   social: {

@@ -257,13 +257,11 @@ export default function Hero() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={staggerContainer}
-          className="mt-20 grid grid-cols-2 gap-6 md:grid-cols-4 lg:mt-28"
+          className="mt-20 grid grid-cols-2 gap-6 max-w-2xl mx-auto lg:mt-28"
         >
           {[
-            { icon: Users, value: 500, suffix: "+", label: "Guided Clients" },
             { icon: Trophy, value: 95, suffix: "%", label: "Satisfaction Rate" },
-            { icon: TrendingUp, value: 1000, suffix: "+", label: "Transformations" },
-            { icon: Star, value: 3, suffix: "+", label: "Years Experience" },
+            { icon: Star, value: 6, suffix: "+", label: "Years Experience" },
           ].map((stat) => (
             <motion.div
               key={stat.label}

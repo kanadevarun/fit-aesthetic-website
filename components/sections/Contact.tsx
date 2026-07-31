@@ -45,7 +45,6 @@ export default function Contact() {
               {[
                 { icon: MessageCircle, label: "WhatsApp", value: "Chat Now", href: siteConfig.whatsapp, color: "text-green-600" },
                 { icon: Mail, label: "Email", value: siteConfig.email, href: `mailto:${siteConfig.email}`, color: "text-accent-maroon" },
-                { icon: Phone, label: "Phone", value: siteConfig.phone, href: `tel:${siteConfig.phone}`, color: "text-accent-brown" },
                 { icon: MapPin, label: "Location", value: "India (Online Worldwide)", href: "#", color: "text-amber-600" },
               ].map((item) => (
                 <a key={item.label} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined} className="group flex items-center gap-4 rounded-xl p-3 transition-colors hover:bg-accent-maroon/5 dark:hover:bg-primary-beige/5">

@@ -10,6 +10,7 @@ import { ArrowRight, Play, Star, Users, Trophy, TrendingUp } from "lucide-react"
 import Button from "@/components/ui/Button";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import { fadeInRight, staggerContainer, staggerChild } from "@/lib/animations";
+import { siteConfig } from "@/data/siteData";
 
 export default function Hero() {
   return (

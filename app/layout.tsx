@@ -70,13 +70,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${outfit.variable} ${playfair.variable} h-full antialiased`}
+      className={`${outfit.variable} ${playfair.variable} antialiased`}
       suppressHydrationWarning
     >
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+      <body className="flex flex-col min-h-screen bg-background text-foreground">
         {children}
       </body>
     </html>

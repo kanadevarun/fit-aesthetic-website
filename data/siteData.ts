@@ -8,14 +8,14 @@ export const siteConfig = {
   description:
     "Personalized fitness guidance, realistic diet strategies, and sustainable transformation plans designed for real people.",
   url: "https://fitaesthetic.in",
-  email: "hello@fitaesthetic.in",
-  phone: "+91 98765 43210",
-  whatsapp: "https://wa.me/919876543210",
+  email: "akankshat0311@gmail.com",
+  phone: "+91 83022 35979",
+  whatsapp: "https://wa.me/918302235979",
   social: {
-    youtube: "https://youtube.com/@fitaesthetic",
-    instagram: "https://instagram.com/fitaesthetic",
+    youtube: "https://www.youtube.com/@TheFitAesthetic",
+    instagram: "https://www.instagram.com/thefitaesthetic_/",
     twitter: "https://twitter.com/fitaesthetic",
-    linkedin: "https://linkedin.com/in/fitaesthetic",
+    linkedin: "https://www.linkedin.com/in/dr-akanksha-tiwari-2a79ab1b5/",
   },
 };
 
@@ -24,8 +24,8 @@ export const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
+  { label: "Pricing", href: "#pricing" },
   { label: "Transformations", href: "#transformations" },
-  { label: "Fitness Tips", href: "#tips" },
   { label: "YouTube", href: "#youtube" },
   { label: "FAQs", href: "#faqs" },
   { label: "Contact", href: "#contact" },
@@ -89,6 +89,90 @@ export const services = [
     description:
       "Holistic guidance covering sleep, stress management, mindfulness, and daily habits. True fitness goes beyond the gym.",
     color: "#6E3B3B",
+  },
+];
+
+// ---------- Pricing ----------
+export const pricingPlans = [
+  {
+    id: "consultation",
+    title: "1:1 Consultation Call",
+    price: 149,
+    currency: "₹",
+    duration: "one-time",
+    description:
+      "A focused 30-minute video call to discuss your goals, assess your current fitness level, and chart out the right path forward.",
+    features: [
+      "30-minute 1:1 video call",
+      "Personalized goal assessment",
+      "Actionable starting roadmap",
+      "Diet & training direction",
+      "Q&A on your specific concerns",
+    ],
+    cta: "Book Your Call",
+    highlighted: false,
+    badge: null,
+  },
+  {
+    id: "plan",
+    title: "Diet & Training Plan",
+    price: 999,
+    currency: "₹",
+    duration: "one-time",
+    description:
+      "A fully customized nutrition and workout plan tailored to your body type, goals, food preferences, and lifestyle.",
+    features: [
+      "Custom macro-based diet plan",
+      "Personalized workout program",
+      "Tailored to your food preferences",
+      "Home or gym workout options",
+      "PDF delivery within 48 hours",
+      "One round of revisions",
+    ],
+    cta: "Get Your Plan",
+    highlighted: false,
+    badge: "Popular",
+  },
+  {
+    id: "coaching-1m",
+    title: "1 Month Coaching",
+    price: 3999,
+    currency: "₹",
+    duration: "/ month",
+    description:
+      "Full hands-on coaching for one month — custom plan, weekly check-ins, and continuous WhatsApp support to keep you on track.",
+    features: [
+      "Custom diet + training plan",
+      "Weekly plan adjustments",
+      "Daily WhatsApp support",
+      "Progress tracking & feedback",
+      "Bi-weekly video check-ins",
+      "Supplement guidance",
+    ],
+    cta: "Start Coaching",
+    highlighted: false,
+    badge: null,
+  },
+  {
+    id: "coaching-3m",
+    title: "3 Month Coaching",
+    price: 6999,
+    currency: "₹",
+    duration: "/ 3 months",
+    description:
+      "The most comprehensive transformation package. Three months of dedicated coaching — the minimum time needed to build lasting habits and see real results.",
+    features: [
+      "Everything in 1 Month Coaching",
+      "Monthly plan evolution",
+      "Priority WhatsApp access",
+      "Unlimited video check-ins",
+      "Lifestyle & sleep coaching",
+      "Post-program maintenance plan",
+      "Save ₹4,998 vs monthly",
+    ],
+    cta: "Transform Now",
+    highlighted: true,
+    badge: "Best Value",
   },
 ];
 
@@ -219,28 +303,28 @@ export const fitnessTips = [
 // ---------- YouTube Videos ----------
 export const youtubeVideos = [
   {
+    id: "j3m7hwQRfCk",
     title: "My Complete Morning Routine for Fat Loss",
     views: "125K views",
     duration: "12:34",
-    thumbnail: "morning-routine",
   },
   {
+    id: "L0d3sHc2IKI",
     title: "Beginner Full Body Workout — No Equipment",
     views: "89K views",
     duration: "18:22",
-    thumbnail: "beginner-workout",
   },
   {
+    id: "PzWI31yThag",
     title: "What I Eat In A Day — High Protein Indian Diet",
     views: "210K views",
     duration: "15:45",
-    thumbnail: "diet-plan",
   },
   {
+    id: "nygKwPbWCnk",
     title: "5 Mistakes Ruining Your Fat Loss Journey",
     views: "156K views",
     duration: "10:18",
-    thumbnail: "mistakes",
   },
 ];
 

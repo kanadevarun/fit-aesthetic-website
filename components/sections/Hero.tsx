@@ -4,11 +4,12 @@
 // Hero — Premium hero section with animated elements
 // ============================================================
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Play, Star, Users, Trophy, TrendingUp } from "lucide-react";
 import Button from "@/components/ui/Button";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
-import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, staggerChild } from "@/lib/animations";
+import { fadeInRight, staggerContainer, staggerChild } from "@/lib/animations";
 
 export default function Hero() {
   return (
@@ -173,25 +174,31 @@ export default function Hero() {
             variants={fadeInRight}
             className="relative flex items-center justify-center"
           >
-            {/* Main image placeholder with premium frame */}
+            {/* Main image with premium frame */}
             <div className="relative">
               {/* Background glow */}
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-accent-maroon/10 to-accent-brown/10 blur-2xl" />
 
               {/* Image container */}
-              <div className="relative h-[400px] w-[320px] overflow-hidden rounded-3xl bg-gradient-to-br from-primary-beige to-white shadow-2xl sm:h-[480px] sm:w-[380px] dark:from-neutral-dark dark:to-accent-brown/10">
-                <div className="flex h-full w-full items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-accent-maroon to-accent-brown">
-                      <span className="text-4xl font-bold text-white font-heading">AT</span>
-                    </div>
-                    <p className="text-lg font-heading font-bold text-neutral-dark dark:text-primary-beige">
-                      Dr. Akanksha Tiwari
-                    </p>
-                    <p className="mt-1 text-sm text-accent-brown/60 dark:text-primary-beige/50">
-                      Fitness Coach & Wellness Expert
-                    </p>
-                  </div>
+              <div className="relative h-[400px] w-[320px] overflow-hidden rounded-3xl shadow-2xl sm:h-[500px] sm:w-[390px]">
+                <Image
+                  src="/images/hero-photo.jpeg"
+                  alt="Dr. Akanksha Tiwari — Fitness Coach"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                  sizes="(max-width: 640px) 320px, 390px"
+                />
+                {/* Subtle top gradient for readability */}
+                <div className="absolute top-0 inset-x-0 h-20 bg-gradient-to-b from-neutral-dark/50 to-transparent" />
+                {/* Name label at top */}
+                <div className="absolute top-4 inset-x-4 text-center">
+                  <p className="text-sm font-heading font-bold text-white tracking-wide drop-shadow-md">
+                    Dr. Akanksha Tiwari
+                  </p>
+                  <p className="mt-0.5 text-[11px] text-white/80 drop-shadow-sm">
+                    Fitness Coach &amp; Wellness Expert
+                  </p>
                 </div>
               </div>
 

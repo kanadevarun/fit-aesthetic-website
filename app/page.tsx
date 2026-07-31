@@ -8,8 +8,8 @@ import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Services from "@/components/sections/Services";
+import Pricing from "@/components/sections/Pricing";
 import Transformations from "@/components/sections/Transformations";
-import FitnessTips from "@/components/sections/FitnessTips";
 import YouTubeSection from "@/components/sections/YouTube";
 import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
@@ -28,8 +28,8 @@ export default function Home() {
         <Hero />
         <About />
         <Services />
+        <Pricing />
         <Transformations />
-        <FitnessTips />
         <YouTubeSection />
         <FAQ />
         <Contact />

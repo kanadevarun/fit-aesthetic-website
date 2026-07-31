@@ -4,6 +4,7 @@
 // About — Storytelling section with timeline
 // ============================================================
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Heart, Target, Sparkles, Quote } from "lucide-react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
@@ -34,37 +35,34 @@ export default function About() {
             {/* Background decoration */}
             <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-accent-maroon/5 to-accent-brown/5 blur-xl" />
 
-            {/* Image placeholder */}
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary-beige to-white p-12 shadow-xl dark:from-neutral-dark dark:to-accent-brown/10">
-              <div className="text-center">
-                <div className="mx-auto mb-6 flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-accent-maroon to-accent-brown shadow-lg">
-                  <span className="text-5xl font-bold text-white font-heading">AT</span>
-                </div>
-                <h3 className="text-xl font-heading font-bold text-neutral-dark dark:text-primary-beige">
-                  Dr. Akanksha Tiwari
-                </h3>
-                <p className="mt-2 text-sm text-accent-brown/60 dark:text-primary-beige/50">
-                  Fitness Coach • Nutrition Expert • Wellness Advocate
-                </p>
+            {/* Main portrait photo */}
+            <div className="relative overflow-hidden rounded-3xl shadow-xl" style={{ aspectRatio: "3/4" }}>
+              <Image
+                src="/images/about-photo.jpeg"
+                alt="Dr. Akanksha Tiwari — Fitness Coach & Nutrition Expert"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 90vw, 448px"
+              />
+              {/* Subtle gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-neutral-dark/40 via-transparent to-transparent" />
+            </div>
 
-                {/* Values */}
-                <div className="mt-8 grid grid-cols-3 gap-4">
-                  {[
-                    { icon: Heart, label: "Passion" },
-                    { icon: Target, label: "Focus" },
-                    { icon: Sparkles, label: "Results" },
-                  ].map((item) => (
-                    <div key={item.label} className="text-center">
-                      <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-accent-maroon/10 dark:bg-accent-maroon/20">
-                        <item.icon className="h-5 w-5 text-accent-maroon dark:text-primary-beige/80" />
-                      </div>
-                      <p className="text-xs font-medium text-accent-brown/60 dark:text-primary-beige/50">
-                        {item.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            {/* Floating accent photo — bottom right */}
+            <div className="absolute -bottom-5 -right-5 h-32 w-32 overflow-hidden rounded-2xl border-4 border-white shadow-xl dark:border-neutral-dark sm:-bottom-6 sm:-right-6 sm:h-36 sm:w-36">
+              <Image
+                src="/images/about-accent.jpeg"
+                alt="Dr. Akanksha Tiwari close-up"
+                fill
+                className="object-cover object-top"
+                sizes="144px"
+              />
+            </div>
+
+            {/* Values pill */}
+            <div className="absolute -top-4 -left-4 flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 shadow-lg backdrop-blur-sm dark:bg-neutral-dark/90">
+              <Heart className="h-4 w-4 text-accent-maroon" />
+              <span className="text-xs font-bold text-neutral-dark dark:text-primary-beige">Passion &amp; Results</span>
             </div>
           </div>
         </motion.div>

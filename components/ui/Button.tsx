@@ -19,6 +19,7 @@ interface ButtonProps {
   className?: string;
   icon?: ReactNode;
   iconPosition?: "left" | "right";
+  type?: "button" | "submit" | "reset";
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
@@ -47,6 +48,7 @@ export default function Button({
   className = "",
   icon,
   iconPosition = "left",
+  type = "button",
 }: ButtonProps) {
   const baseStyles =
     "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-300 cursor-pointer select-none focus:outline-none focus:ring-2 focus:ring-accent-maroon/30 focus:ring-offset-2";
@@ -78,6 +80,7 @@ export default function Button({
 
   return (
     <motion.button
+      type={type}
       onClick={onClick}
       className={combinedStyles}
       whileHover={{ scale: 1.03 }}

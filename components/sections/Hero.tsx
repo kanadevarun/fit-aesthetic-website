@@ -122,7 +122,7 @@ export default function Hero() {
               className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start"
             >
               <Button
-                href="#contact"
+                href="/consultation"
                 size="lg"
                 icon={<ArrowRight size={18} />}
                 iconPosition="right"

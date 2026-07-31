@@ -96,18 +96,18 @@ export const services = [
 export const pricingPlans = [
   {
     id: "consultation",
-    title: "1:1 Consultation Call",
-    price: 149,
+    title: "Consultation Call",
+    price: 899,
     currency: "₹",
-    duration: "one-time",
+    duration: "20 min",
     description:
-      "A focused 30-minute video call to discuss your goals, assess your current fitness level, and chart out the right path forward.",
+      "Consultation Call with Dr. Akanksha for query solving and Personal Guidance (Does Not include any Plans).",
     features: [
-      "30-minute 1:1 video call",
+      "20-minute 1:1 call",
       "Personalized goal assessment",
-      "Actionable starting roadmap",
-      "Diet & training direction",
-      "Q&A on your specific concerns",
+      "Query solving & guidance",
+      "Form correction & workout tips",
+      "Clarity on diet macros",
     ],
     cta: "Book Your Call",
     highlighted: false,

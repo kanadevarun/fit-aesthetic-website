@@ -12,11 +12,13 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import CheckoutModal from "@/components/ui/CheckoutModal";
 import { staggerContainer, staggerChild, fadeInUp } from "@/lib/animations";
 import { pricingPlans, siteConfig } from "@/data/siteData";
+import { useRouter } from "next/navigation";
 
 type Plan = (typeof pricingPlans)[number];
 
 export default function Pricing() {
   const [selectedPlan, setSelectedPlan] = useState<Plan | null>(null);
+  const router = useRouter();
 
   return (
     <SectionWrapper id="pricing">
@@ -151,7 +153,13 @@ export default function Pricing() {
             {/* CTA Button — opens checkout modal */}
             <div className="mt-auto pt-6">
               <button
-                onClick={() => setSelectedPlan(plan)}
+                onClick={() => {
+                  if (plan.id === "consultation") {
+                    router.push("/consultation");
+                  } else {
+                    setSelectedPlan(plan);
+                  }
+                }}
                 className={`flex w-full cursor-pointer items-center justify-center gap-2 rounded-full py-3.5 text-sm font-bold shadow-md transition-all duration-300 active:scale-[0.97] ${
                   plan.highlighted
                     ? "bg-white text-accent-maroon hover:shadow-xl hover:brightness-95"

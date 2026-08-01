@@ -38,30 +38,37 @@ export default function Contact() {
 
       <div className="grid gap-8 lg:grid-cols-5">
         {/* Contact Info */}
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInLeft} className="lg:col-span-2 space-y-6">
-          <div className="card-premium rounded-2xl p-6 sm:p-8">
-            <h3 className="mb-6 text-xl font-bold text-neutral-dark dark:text-primary-beige font-heading">Get In Touch</h3>
-            <div className="space-y-5">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInLeft} className="lg:col-span-2 space-y-2 sm:space-y-6">
+          <div className="card-premium rounded-xl sm:rounded-2xl p-2 sm:p-8">
+            <h3 className="mb-2 sm:mb-6 text-[10px] sm:text-xl font-bold text-neutral-dark dark:text-primary-beige font-heading">Get In Touch</h3>
+            <div className="grid grid-cols-4 sm:flex sm:flex-col gap-1 sm:gap-5">
               {[
                 { icon: MessageCircle, label: "WhatsApp", value: "Chat Now", href: siteConfig.whatsapp, color: "text-green-600" },
                 { icon: Mail, label: "Email", value: siteConfig.email, href: `mailto:${siteConfig.email}`, color: "text-accent-maroon" },
-                { icon: MapPin, label: "Location", value: "India (Online Worldwide)", href: "#", color: "text-amber-600" },
+                { icon: MapPin, label: "Location", value: "Worldwide", href: "#", color: "text-amber-600" },
               ].map((item) => (
-                <a key={item.label} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined} className="group flex items-center gap-4 rounded-xl p-3 transition-colors hover:bg-accent-maroon/5 dark:hover:bg-primary-beige/5">
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-accent-maroon/10 dark:bg-accent-maroon/20">
-                    <item.icon className={`h-5 w-5 ${item.color} dark:text-primary-beige/70`} />
+                <a key={item.label} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined} className="group flex flex-col sm:flex-row items-center gap-0.5 sm:gap-4 rounded-lg sm:rounded-xl p-1 sm:p-3 transition-colors hover:bg-accent-maroon/5 dark:hover:bg-primary-beige/5 text-center sm:text-left">
+                  <div className="flex h-5 w-5 sm:h-10 sm:w-10 flex-shrink-0 items-center justify-center rounded-md sm:rounded-xl bg-accent-maroon/10 dark:bg-accent-maroon/20">
+                    <item.icon className={`h-3 w-3 sm:h-5 sm:w-5 ${item.color} dark:text-primary-beige/70`} />
                   </div>
-                  <div>
-                    <p className="text-xs text-accent-brown/50 dark:text-primary-beige/40">{item.label}</p>
-                    <p className="text-sm font-semibold text-neutral-dark dark:text-primary-beige">{item.value}</p>
+                  <div className="overflow-hidden w-full">
+                    <p className="text-[5px] sm:text-xs text-accent-brown/50 dark:text-primary-beige/40 truncate">{item.label}</p>
+                    <p className="text-[6px] sm:text-sm font-semibold text-neutral-dark dark:text-primary-beige truncate">{item.value}</p>
                   </div>
                 </a>
               ))}
+
+              {/* Mobile-only Mini WhatsApp CTA inside the grid */}
+              <div className="flex flex-col items-center justify-center rounded-lg sm:hidden bg-gradient-to-br from-green-500 to-green-600 p-1 text-center shadow-sm">
+                <MessageCircle className="mb-0.5 h-3 w-3 text-white" />
+                <h4 className="text-[5px] font-bold text-white whitespace-nowrap">Prefer WA?</h4>
+                <a href={siteConfig.whatsapp} className="mt-1 rounded bg-white/20 px-1 py-0.5 text-[5px] font-bold text-white backdrop-blur-sm">Chat</a>
+              </div>
             </div>
           </div>
 
-          {/* WhatsApp CTA */}
-          <div className="rounded-2xl bg-gradient-to-br from-green-500 to-green-600 p-6 text-center shadow-lg">
+          {/* WhatsApp CTA (Desktop only) */}
+          <div className="hidden sm:block rounded-2xl bg-gradient-to-br from-green-500 to-green-600 p-6 text-center shadow-lg">
             <MessageCircle className="mx-auto mb-3 h-8 w-8 text-white" />
             <h4 className="mb-2 text-lg font-bold text-white">Prefer WhatsApp?</h4>
             <p className="mb-4 text-sm text-white/80">Get a quick response. Most queries answered within 2 hours.</p>

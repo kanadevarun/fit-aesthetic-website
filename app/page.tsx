@@ -27,8 +27,8 @@ export default function Home() {
       <main>
         <Hero />
         <About />
-        <Services />
         <Pricing />
+        <Services />
         <Transformations />
         <YouTubeSection />
         <FAQ />

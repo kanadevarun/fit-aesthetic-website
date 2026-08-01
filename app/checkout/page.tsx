@@ -192,20 +192,20 @@ function CheckoutContent() {
             <h2 className="text-2xl font-bold font-heading text-neutral-dark dark:text-primary-beige mb-6">Payment Method</h2>
             
             <div className="flex flex-col gap-4 mb-6">
-              <label className={`flex items-center gap-4 p-4 rounded-xl border cursor-pointer transition-colors ${paymentMethod === 'razorpay' ? 'border-accent-maroon bg-accent-maroon/5 dark:border-primary-beige dark:bg-primary-beige/5' : 'border-accent-brown/20 dark:border-primary-beige/20 hover:bg-black/5 dark:hover:bg-white/5'}`}>
+              <label className="flex items-center gap-4 p-4 rounded-xl border opacity-60 cursor-not-allowed transition-colors border-accent-brown/20 dark:border-primary-beige/20 bg-gray-50/50 dark:bg-white/5">
                 <input 
                   type="radio" 
                   name="paymentMethod" 
                   value="razorpay" 
-                  checked={paymentMethod === 'razorpay'}
-                  onChange={() => setPaymentMethod('razorpay')}
-                  className="w-5 h-5 accent-accent-maroon dark:accent-primary-beige"
+                  checked={false}
+                  disabled
+                  className="w-5 h-5 accent-accent-maroon dark:accent-primary-beige cursor-not-allowed"
                 />
                 <div className="flex items-center gap-3">
                   <CreditCard className="text-accent-maroon dark:text-primary-beige" size={24} />
                   <div>
-                    <p className="font-bold text-neutral-dark dark:text-primary-beige">Pay Securely Online</p>
-                    <p className="text-xs text-accent-brown/70 dark:text-primary-beige/70">Cards, UPI, NetBanking via Razorpay</p>
+                    <p className="font-bold text-neutral-dark dark:text-primary-beige">Pay Securely Online <span className="text-xs text-red-500 font-normal ml-1">(Unavailable)</span></p>
+                    <p className="text-xs text-accent-brown/70 dark:text-primary-beige/70">This service is not yet available, please proceed with Manual UPI.</p>
                   </div>
                 </div>
               </label>

@@ -20,11 +20,11 @@ function ConsultationContent() {
       {/* Premium Hero Section */}
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20 mt-8 items-center">
         {/* Image Side with Glow & Float */}
-        <div className="relative order-2 lg:order-1">
+        <div className="relative order-2 lg:order-1 flex justify-center">
           {/* Decorative background blur */}
-          <div className="absolute -inset-4 bg-accent-maroon/20 dark:bg-primary-beige/10 blur-3xl rounded-full animate-pulse opacity-70" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-accent-maroon/20 dark:bg-primary-beige/10 blur-3xl rounded-full animate-pulse opacity-70" />
           
-          <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl ring-1 ring-white/20 dark:ring-white/10 glow-maroon lg:animate-float">
+          <div className="relative w-full max-w-[440px] aspect-[4/5] max-h-[600px] rounded-[2.5rem] overflow-hidden shadow-2xl ring-1 ring-white/20 dark:ring-white/10 glow-maroon lg:animate-float">
             <Image 
               src="/images/about-photo.jpeg"
               alt={selectedPlan.title}
@@ -34,7 +34,7 @@ function ConsultationContent() {
             />
             {/* Glassmorphism overlay for the bottom info */}
             <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
-              <div className="flex items-center gap-2 text-white font-medium">
+              <div className="flex items-center justify-center gap-2 text-white font-medium">
                 <Video size={18} className="text-primary-beige" />
                 <span>1-on-1 Personalized Session</span>
               </div>
